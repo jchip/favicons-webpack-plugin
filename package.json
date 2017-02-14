@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "lint": "semistandard",
-    "prepublish": "npm run test",
+    "prepublish": "if in-publish; then npm run test; fi",
     "posttest": "npm run lint",
     "test": "ava"
   },
@@ -49,10 +49,11 @@
   },
   "dependencies": {
     "favicons": "^4.8.3",
+    "in-publish": "^2.0.0",
     "loader-utils": "^0.2.14",
     "lodash": "^4.11.1"
   },
   "peerDependencies": {
-    "webpack": "1 || ^2.1.0-beta"
+    "webpack": "^1 || ^2"
   }
 }
